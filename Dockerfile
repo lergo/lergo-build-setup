@@ -14,3 +14,6 @@ RUN apt install git -y
 RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 RUN . ~/.nvm/nvm.sh && nvm install `wget -O - https://raw.githubusercontent.com/lergo/lergo-ri/develop/.nvmrc` > /dev/null
 RUN . ~/.nvm/nvm.sh && nvm alias default
+
+## used for phantomjs - which will be deprecated soon
+RUN apt install bzip2 -y
