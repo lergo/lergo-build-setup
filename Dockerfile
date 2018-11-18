@@ -17,3 +17,5 @@ RUN . ~/.nvm/nvm.sh && nvm alias default
 
 ## used for phantomjs - which will be deprecated soon
 RUN apt install bzip2 -y
+RUN apt install python3-pip -y
+RUN pip3 install awscli --upgrade
