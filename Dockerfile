@@ -19,3 +19,4 @@ RUN . ~/.nvm/nvm.sh && nvm alias default
 RUN apt install bzip2 -y
 RUN apt update -y && apt upgrade -y && apt install python3-pip -y
 RUN pip3 install awscli --upgrade
+RUN apt install mongodb -y
