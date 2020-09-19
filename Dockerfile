@@ -1,6 +1,7 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 RUN apt update -y
+RUN apt install -y gnupg2
 RUN apt install -y wget
 
 # https://askubuntu.com/questions/510056/how-to-install-google-chrome
@@ -11,7 +12,7 @@ RUN apt-get install google-chrome-stable -y
 
 RUN apt install git -y
 
-RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | bash
 RUN . ~/.nvm/nvm.sh && nvm install `wget -O - https://raw.githubusercontent.com/lergo/lergo-ri/develop/.nvmrc` > /dev/null
 RUN . ~/.nvm/nvm.sh && nvm alias default
 
@@ -20,4 +21,5 @@ RUN apt install bzip2 -y
 RUN apt update -y && apt upgrade -y && apt install python3-pip -y
 RUN pip3 install awscli --upgrade
 RUN apt install mongodb -y
+RUN apt install redis-server -y
 RUN apt install nginx -y
